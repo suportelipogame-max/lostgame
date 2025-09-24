@@ -1,0 +1,122 @@
+<!doctype html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOST — Portal de Jogos</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      background:#000;
+      color:#fff;
+      font-family:Arial, sans-serif;
+      line-height:1.6;
+      padding-bottom:40px;
+    }
+    header{
+      background:#111;
+      padding:12px 16px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:16px;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+    header h1{
+      flex-basis:100%;
+      text-align:center;
+      font-size:22px;
+      font-weight:bold;
+      margin-bottom:8px;
+      letter-spacing:2px;
+    }
+    header a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:14px;
+      transition:color .3s;
+    }
+    header a:hover{color:#aaa;}
+    main{
+      max-width:900px;
+      margin:20px auto;
+      padding:0 16px;
+    }
+    section{
+      margin-bottom:40px;
+    }
+    h2{
+      font-size:20px;
+      margin-bottom:12px;
+      border-left:4px solid #fff;
+      padding-left:8px;
+    }
+    p{
+      margin-bottom:16px;
+      font-size:16px;
+      text-align:justify;
+    }
+    .timer{
+      text-align:center;
+      font-size:18px;
+      margin-top:30px;
+      padding:10px;
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LOST</h1>
+    <a href="#suporte">SUPORTE</a>
+    <a href="#termos">TERMOS DE USO</a>
+    <a href="#noticias">NOTÍCIAS</a>
+    <a href="#atualizacao">ATUALIZAÇÃO</a>
+    <a href="mailto:seuemail@dominio.com">MANDE UM E-MAIL PARA NÓS</a>
+  </header>
+  <main>
+    <section>
+      <h2>A Experiência Lost</h2>
+      <p>Mergulhe em um universo onde cada escolha molda o seu destino. Em Lost, você não é apenas um jogador — é o protagonista de uma jornada intensa, cheia de desafios estratégicos, paisagens impressionantes e momentos inesquecíveis.</p>
+      <p>Cada missão foi cuidadosamente criada para testar suas habilidades, despertar sua curiosidade e mantê-lo imerso em um mundo vivo, dinâmico e surpreendente. Com jogabilidade fluida, gráficos envolventes e uma trilha sonora impactante, Lost oferece muito mais que diversão: proporciona uma verdadeira aventura interativa.</p>
+      <p>Descubra segredos, forme alianças e prove sua coragem em um cenário que recompensa tanto a inteligência quanto a ousadia. Em Lost, cada segundo é uma nova oportunidade de se superar.</p>
+    </section><section>
+  <h2>Integridade e Jogo Justo</h2>
+  <p>Em Lost, prezamos por uma experiência equilibrada e justa para todos os jogadores. O uso de trapaças, como hacks, exploits ou qualquer outro método que comprometa a integridade do jogo, é estritamente proibido.</p>
+  <p>Qualquer tentativa de adulterar o sistema, obter vantagens indevidas ou prejudicar a experiência de outros jogadores resultará em sanções imediatas, incluindo banimento permanente da conta.</p>
+  <p>Dependendo da gravidade da infração, medidas legais cabíveis poderão ser tomadas, conforme previsto pela legislação vigente. Nossa prioridade é garantir um ambiente seguro, competitivo e ético para toda a comunidade.</p>
+</section>
+
+<div class="timer">
+  <div id="current-date"></div>
+  <div id="countdown"></div>
+</div>
+
+  </main>
+  <script>
+    function updateTimer(){
+      const current = new Date();
+      document.getElementById('current-date').textContent =
+        `Data atual: ${current.toLocaleDateString('pt-BR')} ${current.toLocaleTimeString('pt-BR')}`;const endDate = new Date('2026-10-26T00:00:00');
+  const diff = endDate - current;
+
+  if(diff <= 0){
+    document.getElementById('countdown').textContent = 'O prazo terminou!';
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+  document.getElementById('countdown').textContent =
+    `Contagem regressiva para 26/10/2026: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+setInterval(updateTimer,1000);
+updateTimer();
+
+  </script>
+</body>
+</html>
